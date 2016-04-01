@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
+import android.view.Window;
 
 public class SplashActivity extends Activity implements SplashADListener
 {
@@ -25,7 +26,9 @@ public class SplashActivity extends Activity implements SplashADListener
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_splash);
+		
 		container = (ViewGroup) this.findViewById(R.id.splash_container);
 		splashAD = new SplashAD(this, container, "1105224545","3050910042007813", this, 3000);
 		
