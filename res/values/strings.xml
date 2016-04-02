@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">ChengsWeather</string>
-    <string name="hello_world">Hello world!</string>
+
     <string name="gdtslogan">GDTslogan</string>
 
 </resources>

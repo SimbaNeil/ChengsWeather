@@ -4,6 +4,7 @@ import com.chengsweather.app.R;
 import com.qq.e.ads.splash.SplashAD;
 import com.qq.e.ads.splash.SplashADListener;
 
+
 import activity.ChooseAreaActivity;
 import android.app.Activity;
 import android.content.Intent;
@@ -20,6 +21,7 @@ public class SplashActivity extends Activity implements SplashADListener
 	private SplashAD splashAD;
 	private ViewGroup container;
 
+//	public Intent i = new Intent(this,ChooseAreaActivity.class);
 	public boolean canJump = false;
 
 	@Override
@@ -30,9 +32,11 @@ public class SplashActivity extends Activity implements SplashADListener
 		setContentView(R.layout.activity_splash);
 		
 		container = (ViewGroup) this.findViewById(R.id.splash_container);
-		splashAD = new SplashAD(this, container, "1105224545","3050910042007813", this, 3000);
+		new SplashAD(this, container, "1105224545","4000514032808881",this);
 		
 	}
+
+	
 
 	@Override
 	public void onADPresent()
@@ -63,8 +67,8 @@ public class SplashActivity extends Activity implements SplashADListener
 	}
 
 	/**
-	 * 设置�?个变量来控制当前�?屏页面是否可以跳转，当开屏广告为普链类广告时，点击会打开�?个广告落地页，此时开发�?�还不能打开自己的App主页�?
-	 * 当从广告落地页返回以后， 才可以跳转到�?发�?�自己的App主页；当�?屏广告是App类广告时只会下载App�?
+	 * 设置一个变量来控制当前开屏页面是否可以跳转，当开屏广告为普链类广告时，点击会打开一个广告落地页，此时开发者还不能打开自己的App主页。
+	 * 当从广告落地页返回以后， 才可以跳转到开发者自己的App主页；当开屏广告是App类广告时只会下载App。
 	 */
 	private void next()
 	{
@@ -97,7 +101,7 @@ public class SplashActivity extends Activity implements SplashADListener
 		canJump = true;
 	}
 
-	/** �?屏页�?好禁止用户对返回按钮的控�? */
+	/** 开屏页最好禁止用户对返回按钮的控制 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event)
 	{

@@ -28,7 +28,7 @@ import util.HttpCallbackListener;
 import util.HttpUtil;
 import util.Utility;
 
-public class ChooseAreaActivity extends Activity
+public class ChooseAreaActivity  extends Activity
 {
 	public static final int LEVEL_PROVINCE = 0;
 	public static final int LEVEL_CITY = 1;
@@ -214,7 +214,7 @@ public class ChooseAreaActivity extends Activity
 		{
 			address = "http://www.weather.com.cn/data/list3/city.xml";
 		}
-		showProgressDialog();
+//		showProgressDialog();
 		HttpUtil.sendHttpRequest(address, new HttpCallbackListener()
 		{
 			
@@ -246,7 +246,7 @@ public class ChooseAreaActivity extends Activity
 						public void run()
 						{
 							// TODO Auto-generated method stub
-							closeProgressDialog();
+//							closeProgressDialog();
 							if ("province".equals(type))
 							{
 								queryProvinces();
@@ -275,7 +275,7 @@ public class ChooseAreaActivity extends Activity
 					public void run()
 					{
 						// TODO Auto-generated method stub
-						closeProgressDialog();
+//						closeProgressDialog();
 						Toast.makeText(ChooseAreaActivity.this, "加载失败", Toast.LENGTH_SHORT).show();
 					}
 				});
@@ -286,29 +286,29 @@ public class ChooseAreaActivity extends Activity
 	/**
 	 * 显示进度对话框
 	 */
-	private void showProgressDialog()
-	{
-		// TODO Auto-generated method stub
-		if (progressDialog == null)
-		{
-			progressDialog = new ProgressDialog(this);
-			progressDialog.setMessage("正在加载...");
-			progressDialog.setCanceledOnTouchOutside(false);
-		}
-		progressDialog.show();
-	}
+//	private void showProgressDialog()
+//	{
+//		// TODO Auto-generated method stub
+//		if (progressDialog == null)
+//		{
+//			progressDialog = new ProgressDialog(this);
+//			progressDialog.setMessage("正在加载...");
+//			progressDialog.setCanceledOnTouchOutside(false);
+//		}
+//		progressDialog.show();
+//	}
 	
 	/**
 	 * 关闭进度对话框
 	 */
-	private void closeProgressDialog()
-	{
-		// TODO Auto-generated method stub
-		if (progressDialog != null)
-		{
-			progressDialog.dismiss();
-		}
-	}
+//	private void closeProgressDialog()
+//	{
+//		// TODO Auto-generated method stub
+//		if (progressDialog != null)
+//		{
+//			progressDialog.dismiss();
+//		}
+//	}
 	
 	/**
 	 * 捕获Back按键，根据当前的级别来判断，此时应该返回市列表，省列表，还是直接退出。
