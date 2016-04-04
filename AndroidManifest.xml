@@ -8,17 +8,14 @@
         android:minSdkVersion="17"
         android:targetSdkVersion="21" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- 腾讯 广点通 SDK 相关声明 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 如果需要精确定位的话请加上此权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <!-- 以下为可选权限 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -26,7 +23,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
-    
+
     <permission
         android:name="com.android.launcher.permission.READ_SETTINGS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
@@ -38,25 +35,14 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
+        android:label="@string/app_name" 
         android:theme="@style/AppTheme" >
         <service android:name="service.AutoUpdateService" />
         <service android:name="receiver.AutoUpdateReceiver" />
-
-        <!-- 声明SDK所需要的组件 腾讯广点通 -->
-        <service
-            android:name="com.qq.e.comm.DownloadService"
-            android:exported="false" >
-        </service>
-        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
-        <activity
-            android:name="com.qq.e.ads.ADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
-        </activity>
 
         <meta-data
             android:name="BaiduMobAd_APP_ID"
@@ -68,13 +54,10 @@
             android:name="com.baidu.mobads.AppActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        
-        
-        
         <activity
             android:name="ad.baidu.RSplashActivity"
-            android:label="@string/app_name" 
             android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
@@ -84,8 +67,6 @@
             </intent-filter>
         </activity>
         <activity android:name="activity.WeatherActivity" >
-        </activity>
-        <activity android:name="ad.gdt.SplashActivity" >
         </activity>
         <activity android:name="activity.ChooseAreaActivity" >
         </activity>
